@@ -14,6 +14,9 @@
     <Description>Aegis in-app firewall for .NET. Inspects requests, reports what it saw, and blocks only when told to.</Description>
     <PackageTags>security;waf;runtime-protection;middleware</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/iconicbeen/aegis-sdks/tree/main/dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/iconicbeen/aegis-sdks</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <!-- No PackageReference on purpose. This sits in the request path of

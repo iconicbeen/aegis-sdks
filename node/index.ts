@@ -446,3 +446,12 @@ export function aegis(config: AegisConfig): AegisMiddleware {
 
 /** Exposed so the rule set can be tested and audited. */
 export const RUNTIME_RULES = RULES;
+
+/**
+ * The default policy and its type, so a consumer can override one field
+ * (`{ ...DEFAULT_PROTECTION_POLICY, overrides: [...] }`) without restating the
+ * rest. The README's blocking example is written that way and type-checked
+ * against the built package.
+ */
+export { DEFAULT_PROTECTION_POLICY };
+export type { ProtectionPolicy, EndpointOverride } from "./runtime-protection";

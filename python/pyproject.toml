@@ -23,5 +23,10 @@ dependencies = []
 [project.optional-dependencies]
 dev = ["pytest>=7"]
 
+[project.urls]
+Homepage = "https://app.aegis.sarl"
+Source = "https://github.com/iconicbeen/aegis-sdks/tree/main/python"
+Issues = "https://github.com/iconicbeen/aegis-sdks/issues"
+
 [tool.setuptools]
 py-modules = ["aegis_sarl"]

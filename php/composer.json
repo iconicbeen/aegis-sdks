@@ -3,6 +3,11 @@
   "description": "Aegis in-app firewall for PHP. Inspects requests, reports what it saw, and blocks only when told to.",
   "type": "library",
   "license": "MIT",
+  "homepage": "https://github.com/iconicbeen/aegis-sdks/tree/main/php",
+  "support": {
+    "issues": "https://github.com/iconicbeen/aegis-sdks/issues",
+    "source": "https://github.com/iconicbeen/aegis-sdks/tree/main/php"
+  },
   "keywords": [
     "security",
     "waf",

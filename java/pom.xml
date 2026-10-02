@@ -32,12 +32,29 @@
     blocks only when told to.
   </description>
 
+  <!-- url, licenses, developers and scm are required by Maven Central; a
+       deployment without them is rejected at validation. -->
+  <url>https://github.com/iconicbeen/aegis-sdks/tree/main/java</url>
+
   <licenses>
     <license>
       <name>MIT</name>
+      <url>https://opensource.org/license/mit</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
+
+  <developers>
+    <developer>
+      <name>Aegis SARL</name>
+      <url>https://app.aegis.sarl</url>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/iconicbeen/aegis-sdks.git</connection>
+    <url>https://github.com/iconicbeen/aegis-sdks</url>
+  </scm>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>

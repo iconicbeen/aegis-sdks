@@ -32,5 +32,12 @@
     "middleware"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/iconicbeen/aegis-sdks/tree/main/node",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iconicbeen/aegis-sdks.git",
+    "directory": "node"
+  },
+  "bugs": "https://github.com/iconicbeen/aegis-sdks/issues",
   "sideEffects": false
 }

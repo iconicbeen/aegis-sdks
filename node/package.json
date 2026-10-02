@@ -1,0 +1,36 @@
+{
+  "name": "@aegis-sarl/node",
+  "version": "0.1.0",
+  "description": "Aegis in-app firewall for Node. Inspects requests, reports what it saw, and blocks only when told to.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "bun build ./index.ts --outdir ./dist --target node --format esm && tsc index.ts --declaration --emitDeclarationOnly --skipLibCheck --target es2022 --module es2022 --moduleResolution bundler --types node --outDir dist"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.1",
+    "typescript": "5.9.3"
+  },
+  "keywords": [
+    "security",
+    "waf",
+    "runtime-protection",
+    "express",
+    "middleware"
+  ],
+  "license": "MIT",
+  "sideEffects": false
+}

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <!-- The NuGet id follows the published name family; the namespace stays
+         Aegis.Security so no consumer's `using` changes. -->
+    <PackageId>AegisSarl.Security</PackageId>
+    <Version>0.1.0</Version>
+    <Description>Aegis in-app firewall for .NET. Inspects requests, reports what it saw, and blocks only when told to.</Description>
+    <PackageTags>security;waf;runtime-protection;middleware</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <!-- No PackageReference on purpose. This sits in the request path of
+       somebody's production application, and every dependency is a supply
+       chain risk a security tool has no business introducing. -->
+
+</Project>

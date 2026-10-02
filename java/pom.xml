@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Maven build for the Java SDK.
+
+  The source already sat in the Maven standard layout (src/main/java,
+  src/test/java) but there was no build file, so the only way to compile it was
+  the raw `javac` invocation in sdk/build-all.sh. That compiles, and compiling
+  is not the same as being installable: without a pom nobody can add this as a
+  dependency, which is exactly what the runtime protection capability asks them
+  to do.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!--
+    Coordinates follow the published name family (`aegis-sarl`). Maven Central
+    requires a group id under a domain the publisher proves it owns, and
+    aegis.sarl is that domain, reversed. The Java package stays
+    io.aegis.security: a package rename would break every import for no gain
+    in installability.
+  -->
+  <groupId>sarl.aegis</groupId>
+  <artifactId>aegis-sarl</artifactId>
+  <version>0.1.0</version>
+  <packaging>jar</packaging>
+
+  <name>Aegis Security</name>
+  <description>
+    Aegis in-app firewall for Java. Inspects requests, reports what it saw, and
+    blocks only when told to.
+  </description>
+
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <!--
+    No dependencies at all, runtime or test.
+
+    An in-app firewall is loaded into somebody else's application, and every
+    dependency it brings is one their build has to reconcile and one more thing
+    that can conflict with what they already use. The SDK uses only the JDK.
+
+    The test is a `main` that asserts with `assert` and exits non-zero on
+    failure, run by sdk/build-all.sh with `java -ea`. Declaring JUnit here
+    would list a dependency nothing imports, and surefire would find no tests
+    and pass — a green build proving nothing, which is the failure mode this
+    whole audit exists to catch.
+  -->
+  <dependencies />
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <!-- Honest rather than green: the tests here are not surefire's to
+               run, so it is told so instead of silently finding none. -->
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
